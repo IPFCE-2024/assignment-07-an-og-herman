@@ -20,7 +20,6 @@ typedef struct {
 
 /* Create an empty stack */
 void initialize(stack *s);
-
 /* Insert item x at the top of stack s */
 void push(int x, stack *s);
 
