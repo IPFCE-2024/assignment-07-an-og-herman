@@ -28,7 +28,7 @@ int fakultet(int n){
     return sum;
 }
 
-
+// note: funktionen kører git-testene rigtigt, men ved store n eller for store x bliver funktionen meget u-præcis...
 double taylor_sine(double x, int n) {
     // TODO: Implement the Taylor series approximation for sine
     // Hint: The series is: x - x^3/3! + x^5/5! - x^7/7! + ...
@@ -37,42 +37,14 @@ double taylor_sine(double x, int n) {
 
     double result = x;
     double curr;
+    int fortegn;
 
-    for (int i=1; i<n; i++){
-        curr = pow(-1, i) * (pow(x, 1+i*2) / (double)fakultet(1+i*2));
+    for (int i=1; i<n; i++){ // vi starter på i=1, så hvis n=1 kører loop ikke
+        fortegn = pow(-1, i); // skifter ved hver iteration
+        curr = fortegn * (pow(x, 1+i*2) / (double)fakultet(1+i*2)); // +- x^(1+ 2i) / fac(1 + 2i)
         result += curr;
     }
 
     return result; // placeholder - replace with your implementation
+
 }
-
-// void test_taylor_sine(){
-//     double x=0;
-//     int n=5;
-
-//     double res = sin(x);
-//     double own_res = taylor_sine(x,n);
-
-//     printf("ANSI C sine is : %f \n", res);
-//     printf("Our sine is : %f \n", own_res);
-
-//     x = 3.14;
-//     res = sin(x);
-//     own_res = taylor_sine(x,n);
-
-//     printf("ANSI C sine is : %f \n", res);
-//     printf("Our sine is : %f \n", own_res);
-
-//     x = 1.5;
-//     res = sin(x);
-//     own_res = taylor_sine(x,n);
-
-//     printf("ANSI C sine is : %f \n", res);
-//     printf("Our sine is : %f \n", own_res);
-
-// }
-
-// int main(){
-//     test_taylor_sine();
-// }
-

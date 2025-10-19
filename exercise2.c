@@ -14,7 +14,7 @@
  * - print: Print all items in the stack
  */
 
-#include "stack.h"
+#include "include/stack.h"
 
 /* Create an empty stack */
 void initialize(stack *s)
@@ -68,9 +68,6 @@ int pop(stack *s)
 bool full(stack *s)
 {
     /* pre-condition: true */
-
-
-
     /* post-condition: Returns true if stack is full, false otherwise */
     return false;
 }

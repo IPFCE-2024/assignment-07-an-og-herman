@@ -10,6 +10,11 @@
  * - Declare the taylor_sine function
  */
 
+/*
+Beregner sin(x) ved hjælp af en taylor-række.
+Inputs er x og n, hvor n er præcisionen af sin(x) vi skal finde
+
+*/
 double taylor_sine(double x, int n);
 
 #endif
